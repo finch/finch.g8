@@ -3,4 +3,4 @@
  - `sbt new finch/finch.g8`
  - `cd helloworld`
  - `sbt run`
- - `curl http://localhost:8080/hello`
+ - `curl http://localhost:8081/hello`
