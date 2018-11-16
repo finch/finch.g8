@@ -1,4 +1,5 @@
 val finchVersion = "$finch_version$"
+val circeVersion = "$circe_version$"
 val scalatestVersion = "$scalatest_version$"
 
 lazy val root = (project in file("."))
@@ -9,6 +10,8 @@ lazy val root = (project in file("."))
     scalaVersion := "$scala_version$",
     libraryDependencies ++= Seq(
       "com.github.finagle" %% "finchx-core"  % finchVersion,
+      "com.github.finagle" %% "finchx-circe"  % finchVersion,
+      "io.circe" %% "circe-generic" % circeVersion,
       "org.scalatest"      %% "scalatest"    % scalatestVersion % "test"
     )
   )
