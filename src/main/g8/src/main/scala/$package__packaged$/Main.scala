@@ -30,5 +30,6 @@ object Main extends App {
     .serve[Application.Json](helloWorld :+: hello)
     .toService
 
+  println(s"Server starting at http://0.0.0.0:8081/\n")
   Await.ready(Http.server.serve(":8081", service))
 }

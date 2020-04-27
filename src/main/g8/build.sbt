@@ -1,17 +1,11 @@
-val finchVersion = "$finch_version$"
-val circeVersion = "$circe_version$"
-val scalatestVersion = "$scalatest_version$"
+import Dependencies._
+
+ThisBuild / scalaVersion := "$scala_version$"
+ThisBuild / version := "0.1.0-SNAPSHOT"
 
 lazy val root = (project in file("."))
   .settings(
     organization := "$organization$",
     name := "$name;format="norm"$",
-    version := "0.0.1-SNAPSHOT",
-    scalaVersion := "$scala_version$",
-    libraryDependencies ++= Seq(
-      "com.github.finagle" %% "finchx-core"  % finchVersion,
-      "com.github.finagle" %% "finchx-circe"  % finchVersion,
-      "io.circe" %% "circe-generic" % circeVersion,
-      "org.scalatest"      %% "scalatest"    % scalatestVersion % "test"
-    )
+    libraryDependencies ++= Dependencies.buildDeps ++ Dependencies.testDeps
   )

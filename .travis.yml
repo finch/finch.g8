@@ -1,3 +1,5 @@
+sudo: false
+
 language: scala
 
 cache:
@@ -5,11 +7,13 @@ cache:
     - $HOME/.ivy2/cache
     - $HOME/.sbt/boot/
 
+scala:
+  - 2.13.1
+
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 script:
-  ## This runs the template with the default parameters, and runs test within the templated app.
   - sbt g8Test
 
   ## Tricks to avoid unnecessary cache updates
